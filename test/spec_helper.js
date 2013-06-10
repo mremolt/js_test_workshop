@@ -2,7 +2,7 @@ require.config({
   paths: {
     // basic paths
     lib: '../lib',
-    app: '../app',
+    app: '../app/js',
 
     // shortcuts for often used libs
     jquery: '../lib/jquery',
