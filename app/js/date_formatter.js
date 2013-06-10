@@ -1,17 +1,22 @@
-define(['exports', 'moment'], function(exports, moment) {
+define(['module', 'moment'], function(module, moment) {
 
-  exports.formatDate = function(value) {
-    return moment(value).format('D.M.YYYY');
+  // alternative style:
+  //   exports.bla = function ...
+  // or
+  //   module.exports = {}
+  module.exports = {
+    formatDate: function(value) {
+      return moment(value).format('D.M.YYYY');
+    },
+
+    formatTime: function(value) {
+      return moment(value).format('HH:mm');
+    },
+
+    formatDateTime: function(value) {
+      return moment(value).format('D.M.YYYY HH:mm');
+    }
   };
-
-  exports.formatTime = function(value) {
-    return moment(value).format('HH:mm');
-  };
-
-  exports.formatDateTime = function(value) {
-    return moment(value).format('D.M.YYYY HH:mm');
-  };
-
 
 });
 

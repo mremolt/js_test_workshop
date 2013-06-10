@@ -14,26 +14,27 @@ define(['chai', 'jquery', 'lib/fixtures', 'app/form_validation'], function(chai,
   describe('form validation', function() {
 
     describe('validating a required field', function() {
+      var formElement;
+
       beforeEach(function() {
         fixtures.load('required.html');
         $ = jQueryWrapped(fixtures.window());
+
+        formElement = $("#required-field");
+        formValidation.required(formElement);
       });
 
       afterEach(function() {
         fixtures.cleanUp();
       });
 
-      it("adds the 'invalid' class if the filed is empty", function() {
-        var formElement = $("#required-field");
-        formValidation.required(formElement);
+      it("adds the 'invalid' class if the field is empty", function() {
         formElement.change();
         expect(formElement).to.have.class('invalid');
         expect(formElement).to.not.have.class('valid');
       });
 
-      it("does not add the 'invalid' class if the filed is empty", function() {
-        var formElement = $("#required-field");
-        formValidation.required(formElement);
+      it("does not add the 'invalid' class if the field is empty", function() {
         formElement.val("hallo");
         formElement.change();
         expect(formElement).to.not.have.class('invalid');
@@ -41,8 +42,6 @@ define(['chai', 'jquery', 'lib/fixtures', 'app/form_validation'], function(chai,
       });
 
       it("switches from invalid to valid", function() {
-        var formElement = $("#required-field");
-        formValidation.required(formElement);
         formElement.change();
         formElement.val("hallo");
         formElement.change();
