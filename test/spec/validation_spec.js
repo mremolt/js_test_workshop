@@ -1,4 +1,4 @@
-define(['chai', 'jquery', 'app/validation'], function(chai, $, validation) {
+define(['chai', 'app/validation'], function(chai, validation) {
   var expect = chai.expect;
 
   describe('validation specs', function() {

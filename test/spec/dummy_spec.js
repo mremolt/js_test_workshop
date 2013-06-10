@@ -1,4 +1,4 @@
-define(['chai', 'underscore'], function(chai, _) {
+define(['chai', 'underscore', 'jquery'], function(chai, _, $) {
   var expect = chai.expect;
 
   describe('sample test', function() {

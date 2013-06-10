@@ -1,4 +1,4 @@
-define(['exports', 'underscore'], function(exports, _) {
+define(['exports'], function(exports) {
 
   var normalizeNumber = function(value) {
     var val = null;
