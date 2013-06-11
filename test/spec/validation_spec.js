@@ -2,7 +2,7 @@ define(['chai', 'app/validation'], function(chai, validation) {
   var expect = chai.expect;
 
   describe('validation specs', function() {
-    it('bla spec', function() {
+    it('calling a lib function', function() {
       expect( validation.bla() ).to.equal('bla');
     });
 
