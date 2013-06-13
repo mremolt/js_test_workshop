@@ -16,9 +16,9 @@ require.config({
 });
 
 var dependencies = ['require', 'jquery', 'underscore', 'app/date_formatter',
-  'app/form_validation', 'app/renderer', 'domReady!'];
+  'app/form_validation', 'app/renderer', 'app/obj', 'domReady!'];
 
-require(dependencies, function(require, $, _, dateFormatter, validation, Renderer) {
+require(dependencies, function(require, $, _, dateFormatter, validation, Renderer, Obj) {
 
   var today = dateFormatter.formatDate(new Date());
   $("#today").text(today);
@@ -28,5 +28,34 @@ require(dependencies, function(require, $, _, dateFormatter, validation, Rendere
 
   validation.required('#the-name');
   validation.email('#the-email');
+
+
+  // create a new "class" by extending Obj
+  var Person = Obj.extend({
+    name: function() {
+      return this.get('firstName') + ' ' + this.get('lastName');
+    }
+  });
+
+  // create instance
+  var p = new Person({
+    firstName: 'Arthur',
+    lastName: 'Dent'
+  });
+
+  // catch the set event on the newly created Person
+  $(p).on('set', function(event, data) {
+    if (data.key === 'firstName') {
+      // and set the firstName
+      $('#welcome-name').text(data.value);
+
+      // and set the firstName via the template renderer
+      renderer.renderTo('#welcome', { name: data.value});
+    }
+  });
+
+  // Hack: assign p to window, so we can access it in dev console
+  window.p = p;
+  window.Person = Person;
 
 });
