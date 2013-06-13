@@ -118,7 +118,7 @@ define(['chai', 'underscore', 'jquery'], function(chai, _, $) {
         var result = '';
 
         beforeEach(function(done) {
-          $.get('http://localhost:3000/app/index.html', function(data) {
+          $.get('/app/index.html', function(data) {
             result = data;
             done();
           });
