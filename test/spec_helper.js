@@ -1,21 +1,23 @@
 require.config({
   paths: {
     // basic paths
-    lib: '../lib',
+    components: '../components',
     app: '../app/js',
     templates: '../app/templates',
 
     // shortcuts for often used libs
-    jquery: '../lib/jquery',
-    underscore: '../lib/lodash',
-    moment: '../lib/moment',
-    text: '../../lib/text',
-    mocha: '../lib/mocha',
-    chai: '../lib/chai'
+    jquery: '../components/jquery/jquery.min',
+    underscore: '../components/lodash/dist/lodash.min',
+    moment: '../components/moment/min/moment.min',
+    text: '../components/requirejs-text/text',
+    mocha: '../components/mocha/mocha',
+    chai: '../components/chai/chai',
+    chaiJquery: '../components/chai-jquery/chai-jquery',
+    fixtures: '../components/fixtures'
   }
 });
 
-require(['require', 'chai', 'lib/chai-jquery', 'mocha'], function(require, chai, chaiJquery)  {
+require(['require', 'chai', 'chaiJquery', 'mocha'], function(require, chai, chaiJquery)  {
   mocha.setup('bdd');
   chai.use(chaiJquery);
 

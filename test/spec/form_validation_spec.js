@@ -1,4 +1,4 @@
-define(['chai', 'jquery', 'lib/fixtures', 'app/form_validation'], function(chai, jQuery, Fixtures, formValidation) {
+define(['chai', 'jquery', 'fixtures', 'app/form_validation'], function(chai, jQuery, Fixtures, formValidation) {
   var expect = chai.expect;
   var fixtures = new Fixtures();
   fixtures.path = 'fixtures';

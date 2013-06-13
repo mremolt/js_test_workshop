@@ -1,4 +1,4 @@
-define(['chai', 'lib/fixtures', 'app/renderer'], function(chai, Fixtures, Renderer) {
+define(['chai', 'fixtures', 'app/renderer'], function(chai, Fixtures, Renderer) {
   var expect = chai.expect;
   var fixtures = new Fixtures();
   fixtures.path = 'fixtures';
