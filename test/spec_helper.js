@@ -12,21 +12,25 @@ require.config({
     text: '../components/requirejs-text/text',
     mocha: '../components/mocha/mocha',
     chai: '../components/chai/chai',
+    sinon: '../components/sinon/index',
     chaiJquery: '../components/chai-jquery/chai-jquery',
+    sinonChai: '../components/sinon-chai/lib/sinon-chai',
     fixtures: '../components/fixtures'
   }
 });
 
-require(['require', 'chai', 'chaiJquery', 'mocha'], function(require, chai, chaiJquery)  {
+require(['require', 'chai', 'chaiJquery', 'sinonChai', 'mocha'], function(require, chai, chaiJquery, sinonChai)  {
   mocha.setup('bdd');
   chai.use(chaiJquery);
+  chai.use(sinonChai);
 
   var specs = [
     'spec/dummy_spec',
     'spec/date_formatter_spec',
     'spec/validation_spec',
     'spec/form_validation_spec',
-    'spec/renderer_spec'
+    'spec/renderer_spec',
+    'spec/obj_spec'
   ];
 
   require(specs, function() {

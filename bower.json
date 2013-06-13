@@ -11,7 +11,9 @@
     "requirejs-domready": "~2.0.1",
     "modernizr": "~2.6.2",
     "moment": "~2.0.0",
-    "chai-jquery": "~1.1.1"
+    "chai-jquery": "~1.1.1",
+    "sinon-chai": "~2.4.0",
+    "sinon": "http://sinonjs.org/releases/sinon-1.7.1.js"
   },
   "ignore": [
     "**/.*",
