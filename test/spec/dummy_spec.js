@@ -32,6 +32,7 @@ define(['chai', 'underscore', 'jquery'], function(chai, _, $) {
       expect('').to.be.empty;
       expect({}).to.be.empty;
       expect([1]).to.not.be.empty;
+      expect('0').to.not.be.empty;
 
       expect(5 > 3).to.be.true;
       expect(5).to.be.greaterThan(3);
@@ -42,6 +43,7 @@ define(['chai', 'underscore', 'jquery'], function(chai, _, $) {
       expect([1, 2]).to.be.instanceOf(Array);
 
       expect({ foo: 'bar' }).to.have.property('foo');
+      expect({ foo: 'bar' }).to.not.have.property('test');
       expect({ foo: 'bar' }).to.have.property('foo', 'bar');
       expect({ foo: 'bar' }).to.not.have.property('foo', 'baz');
 
@@ -57,6 +59,14 @@ define(['chai', 'underscore', 'jquery'], function(chai, _, $) {
 
       afterEach(function() {
         console.log('This gets executed after each "it"');
+      });
+
+      before(function() {
+        console.log('This gets executed before the first "it"');
+      });
+
+      after(function() {
+        console.log('This gets executed after the last "it"');
       });
 
       it('run1', function() {

@@ -1,4 +1,5 @@
 define(['module', 'moment'], function(module, moment) {
+  'use strict';
 
   // alternative style:
   //   exports.bla = function ...

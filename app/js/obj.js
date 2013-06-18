@@ -1,8 +1,10 @@
 define(['module', 'underscore', 'jquery'], function(module, _, $) {
+  'use strict';
 
   var Obj = function(attrs) {
     attrs = attrs || {};
     var that = this;
+    var bla = 42;
 
     // accessor method for the "private" attribute attrs
     this.get = function(key) {

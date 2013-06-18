@@ -1,7 +1,8 @@
 define(['exports', 'jquery', 'app/validation'], function(exports, $, validation) {
+  'use strict';
 
   exports.required = function($formInput) {
-    var $formInput = $($formInput);
+    $formInput = $($formInput);
 
     $formInput.on('change blur', function(event) {
       var $target = $(event.target);
@@ -16,7 +17,7 @@ define(['exports', 'jquery', 'app/validation'], function(exports, $, validation)
   };
 
   exports.email = function($formInput) {
-    var $formInput = $($formInput);
+    $formInput = $($formInput);
 
     $formInput.on('change blur', function(event) {
       var $target = $(event.target);

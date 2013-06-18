@@ -1,4 +1,5 @@
 define(['require', 'module', 'underscore', 'jquery'], function(require, module, _, $) {
+  'use strict';
 
   var Renderer = function(templateName) {
     this.templateName = templateName;

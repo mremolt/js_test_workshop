@@ -1,4 +1,5 @@
 define(['exports'], function(exports) {
+  'use strict';
 
   var normalizeNumber = function(value) {
     var val = null;
